@@ -38,6 +38,15 @@ public class AvatarAnimations : MonoBehaviour
 		{
 			playeranim.SetBool ("isWalking", false);
 		}
+
+		if(AvatarMove.IsJumping)
+		{
+			playeranim.SetBool ("isJumping", true);
+		}
+		else
+		{
+			playeranim.SetBool ("isJumping", false);
+		}
 	
 	}
 }

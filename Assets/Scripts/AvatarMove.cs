@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class AvatarMove : MonoBehaviour {
+	
+	public static bool IsJumping{ get; private set;}
 
 	public float Speed = 0f;
 	public float MaxJumpTime = 2f;
@@ -9,7 +11,6 @@ public class AvatarMove : MonoBehaviour {
 	private float move = 0f;
 	private float JumpTime = 0f;
 	private bool CanJump;
-
 
 	void Start () {
 		JumpTime  = MaxJumpTime;
@@ -25,6 +26,8 @@ public class AvatarMove : MonoBehaviour {
 			CanJump = true;
 			JumpTime  = MaxJumpTime;
 		}
+
+		IsJumping = !CanJump;
 	}
 
 	void FixedUpdate () {
