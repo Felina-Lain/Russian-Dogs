@@ -12,10 +12,13 @@ public class AvatarAnimations : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		
 		SpriteRenderer playersr = PlayerSprite.GetComponent<SpriteRenderer> ();
+		Animator playeranim = PlayerSprite.GetComponent<Animator> ();
 
+		//flipping the player sprite depending on direction
 		if (Manager.player_direction == "left") 
 		{
 
@@ -25,6 +28,15 @@ public class AvatarAnimations : MonoBehaviour
 		else 
 		{
 			playersr.flipX = false;
+		}
+
+		//setting the wait animation
+		if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey (KeyCode.RightArrow)) {
+			playeranim.SetBool ("isWalking", true);
+		} 
+		else 
+		{
+			playeranim.SetBool ("isWalking", false);
 		}
 	
 	}
