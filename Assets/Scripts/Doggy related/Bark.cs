@@ -16,7 +16,7 @@ public class Bark : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.E) && !GetComponent<PickUp> ()._holding) {
 		
 			print ("WROUF! WROUF!");
-			GetComponent<AudioSource> ().Play ();
+			this.GetComponent<AudioSource> ().Play ();
 			_bark = true;
 		
 		} else { 

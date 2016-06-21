@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ScentDetect : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class ScentDetect : MonoBehaviour {
 	public GameObject trail;
 	public GameObject trailContainer;
 	public Color trailColor;
+
 
 	float trailTimer;
 
@@ -24,7 +26,7 @@ public class ScentDetect : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
 		//detecting overlap between object smell collider and player smell collider
 		GameObject player = GameObject.FindWithTag ("Player");
@@ -36,22 +38,17 @@ public class ScentDetect : MonoBehaviour {
 		selfPos.x = this.transform.position.x;
 		selfPos.y = this.transform.position.y;
 
-		if (selfcollider.OverlapPoint (playerPos)) 
-			{
+		if (selfcollider.OverlapPoint (playerPos)) {
 			isSmelling = true;
-		} 
-		else 
-		{
+		} else {
 			isSmelling = false;
 		}
 
 		//smell trail
-		if (isSmelling) 
-		{
+		if (isSmelling) {
 			trailTimer = trailTimer + Time.deltaTime;
 
-			if (trailTimer >= 0.3f) 
-			{
+			if (trailTimer >= 0.3f) {
 				trailTimer = 0;
 				GameObject t = Instantiate (trail);
 				Vector3 midPoint;
@@ -63,7 +60,7 @@ public class ScentDetect : MonoBehaviour {
 				t.transform.position = midPoint;
 				t.transform.parent = trailContainer.transform;
 
-				ParticleSystem parentparticles = this.GetComponent<ParticleSystem>();
+				ParticleSystem parentparticles = this.GetComponent<ParticleSystem> ();
 				ParticleSystem trailparticles = t.GetComponent<ParticleSystem> ();
 
 				var colP = parentparticles.startColor;
@@ -80,12 +77,15 @@ public class ScentDetect : MonoBehaviour {
 
 		}
 
-		if (!isSmelling) 
-		{
-			Destroy (GameObject.Find("Trail" + this.name));
+		if (!isSmelling) {
+			Destroy (GameObject.Find ("Trail" + this.name));
 
 		}
 
+		if (Mathf.RoundToInt(playerPos.x) == Mathf.RoundToInt(selfPos.x)) 
+		{
+			Destroy (GameObject.Find ("Trail" + this.name));
+		}
+			
 	}
-
 }
