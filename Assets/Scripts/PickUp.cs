@@ -39,6 +39,7 @@ public class PickUp : MonoBehaviour {
 					GetComponent<ObjectClass> ()._health += _pick.GetComponent<ObjectClass> ()._health;
 					Destroy (_pick);
 					_pick = null;
+					_holding = false;
 					
 
 					}
