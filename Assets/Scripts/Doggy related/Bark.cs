@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Bark : MonoBehaviour {
 
+	public bool _bark;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,7 +16,10 @@ public class Bark : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.E) && !GetComponent<PickUp> ()._holding) {
 		
 			print ("WROUF! WROUF!");
+			_bark = true;
 		
+		} else { 
+			_bark = false;
 		}
 	
 	}
