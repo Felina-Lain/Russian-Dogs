@@ -16,14 +16,16 @@ public class PickUp : MonoBehaviour {
 			_pick = other.gameObject;
 		}
 
-		if (Input.GetKeyDown (KeyCode.R)) {
-		
-			_holding = !_holding;
-		
-		}
+
 	}
 
 		void  Update () {
+
+		if (Input.GetKeyDown (KeyCode.R)) {
+
+			_holding = !_holding;
+
+		}
 
 		if (_pick == null) {
 			return;
@@ -36,7 +38,7 @@ public class PickUp : MonoBehaviour {
 
 				if (Input.GetKey (KeyCode.E) && _pick.GetComponent<ObjectClass> ()._edible) {
 				
-					GetComponent<ObjectClass> ()._health += _pick.GetComponent<ObjectClass> ()._health;
+					this.transform.parent.GetComponent<ObjectClass> ()._health += _pick.GetComponent<ObjectClass> ()._health;
 					Destroy (_pick);
 					_pick = null;
 					_holding = false;
@@ -44,7 +46,7 @@ public class PickUp : MonoBehaviour {
 
 					}
 
-			} else {
+		} else if(!_holding){
 
 				_pick.transform.parent = null;
 				_pick.GetComponent<MeshRenderer> ().enabled = true;
