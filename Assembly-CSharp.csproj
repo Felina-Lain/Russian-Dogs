@@ -45,15 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AvatarAnimations.cs" />
-     <Compile Include="Assets\Scripts\AvatarMove.cs" />
-     <Compile Include="Assets\Scripts\Bark.cs" />
-     <Compile Include="Assets\Scripts\Camera.cs" />
-     <Compile Include="Assets\Scripts\Manager.cs" />
-     <Compile Include="Assets\Scripts\ObjectClass.cs" />
-     <Compile Include="Assets\Scripts\PickUp.cs" />
-     <Compile Include="Assets\Scripts\ScentDetect.cs" />
-     <Compile Include="Assets\Scripts\ScentInfo.cs" />
+     <Compile Include="Assets\Scripts\Doggy related\AvatarAnimations.cs" />
+     <Compile Include="Assets\Scripts\Doggy related\AvatarMove.cs" />
+     <Compile Include="Assets\Scripts\Doggy related\Bark.cs" />
+     <Compile Include="Assets\Scripts\Doggy related\PickUp.cs" />
+     <Compile Include="Assets\Scripts\Doggy related\ScentDetect.cs" />
+     <Compile Include="Assets\Scripts\Doggy related\ScentInfo.cs" />
+     <Compile Include="Assets\Scripts\NPC\Pigeon.cs" />
+     <Compile Include="Assets\Scripts\game base\Camera.cs" />
+     <Compile Include="Assets\Scripts\game base\Manager.cs" />
+     <Compile Include="Assets\Scripts\game base\ObjectClass.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
