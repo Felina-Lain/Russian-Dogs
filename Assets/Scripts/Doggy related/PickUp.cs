@@ -37,10 +37,15 @@ public class PickUp : MonoBehaviour {
 
 			if (_pick.GetComponent<ObjectClass> ()._pickable && _holding) {
 
-				_pick.transform.parent = this.transform;
+				//_pick.transform.parent = this.transform;
 				_pick.GetComponent<MeshRenderer> ().enabled = false;
 				_baballe = true;
-			//_pick.GetComponent<ObjectClass> ()._pickable && _holding;
+			_pick.GetComponent<ObjectClass> ()._carried = true;
+
+			if (_pick.GetComponent<ObjectClass> ()._carried == true) {
+				_pick.transform.position = GameObject.FindWithTag ("Player").transform.position;
+			}
+
 
 
 			//eating stuff
@@ -59,8 +64,8 @@ public class PickUp : MonoBehaviour {
 					}
 
 		} else if(!_holding){
-
-				_pick.transform.parent = null;
+			_pick.GetComponent<ObjectClass> ()._carried = false;
+				//_pick.transform.parent = null;
 				_pick.GetComponent<MeshRenderer> ().enabled = true;
 				_pick = null;
 				_baballe = false;

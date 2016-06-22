@@ -38,6 +38,25 @@ public class AvatarMove : MonoBehaviour {
 			GetComponent<Rigidbody>().AddForce (new Vector3 (GetComponent<Rigidbody>().velocity.x,JumpForce));
 			CanJump = false;
 			JumpTime  = MaxJumpTime;
-		}
+
+/*			//ajuste le point de transport des objets
+			if (Manager.player_direction == "Right") {
+				GameObject carrypoint = GameObject.Find ("CarryPoint");
+				Vector3 carryV = carrypoint.transform.position;
+				carryV.x = (carryV + 1.50f);
+				carryV.y = (carryV + 0.50f);
+				carrypoint.transform.position = carryV;
+			} 
+			else 
+			{
+				GameObject carrypoint = GameObject.Find ("CarryPoint");
+				Vector3 carryV = carrypoint.transform.position;
+				carryV.x = (carryV - 1.50f);
+				carryV.y = (carryV - 0.50f);
+				carrypoint.transform.position = carryV;
+			} */
+		} 
+
+
 	}
 }
