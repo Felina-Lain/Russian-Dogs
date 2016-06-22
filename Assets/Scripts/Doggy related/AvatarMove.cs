@@ -6,6 +6,8 @@ public class AvatarMove : MonoBehaviour {
 	public static bool IsJumping{ get; private set;}
 
 	public float Speed = 0f;
+	public float Sprint = 0f;
+	private float _speed;
 	public float MaxJumpTime = 2f;
 	public float JumpForce;
 	private float move = 0f;
@@ -28,11 +30,22 @@ public class AvatarMove : MonoBehaviour {
 		}
 
 		IsJumping = !CanJump;
+
+		if (Input.GetKey (KeyCode.LeftShift)) {
+		
+			_speed = Speed + Sprint;
+		
+		} else {
+		
+			_speed = Speed;
+		
+		}
 	}
 
 	void FixedUpdate () {
 		move = Input.GetAxis ("Horizontal");
-		GetComponent<Rigidbody>().velocity = new Vector3 (move * Speed, GetComponent<Rigidbody>().velocity.y);
+		GetComponent<Rigidbody> ().velocity = new Vector3 (move * _speed, GetComponent<Rigidbody> ().velocity.y);
+
 		if (Input.GetKey (KeyCode.UpArrow)  && CanJump)
 		{
 			GetComponent<Rigidbody>().AddForce (new Vector3 (GetComponent<Rigidbody>().velocity.x,JumpForce));
