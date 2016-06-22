@@ -16,6 +16,7 @@ public class Pigeon : MonoBehaviour {
 	public float _flight;
 	public bool _groundAnimal;
 
+
 	public Collider2D flightcollider;
 
 	Vector3 walkAmount;
@@ -36,6 +37,12 @@ public class Pigeon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (walkSpeed > 0) {
+			
+			Animator pigeonanim = this.GetComponentInChildren<Animator> ();
+			pigeonanim.SetBool ("isFlying", true);
+		
+		}
 
 		walkAmount.x = walkingDirection * walkSpeed * Time.deltaTime;
 		if (walkingDirection > 0.0f && transform.position.x >= wallRight)
