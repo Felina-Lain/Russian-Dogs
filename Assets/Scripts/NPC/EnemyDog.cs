@@ -22,13 +22,16 @@ public class EnemyDog : MonoBehaviour {
 
 	bool isGrowling;
 	bool isFleeing = false;
+	bool isEating = false;
 
 	Collider2D lineofsight;
 	SpriteRenderer enemydogsr;
 	GameObject player;
 	Animator enemydoganim;
+	AudioSource growl;
 
 	void Start(){
+		growl = this.GetComponent<AudioSource> ();
 		lineofsight = this.GetComponentInChildren<Collider2D> ();
 		enemydogsr = this.GetComponentInChildren<SpriteRenderer> ();
 		player = GameObject.FindWithTag ("Player");
@@ -46,10 +49,22 @@ public class EnemyDog : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Debug.Log ("Is Eating :" + isEating);
+		
+		FoodCheck ();
 
-		PlayerCheck ();
-
-
+		if (!isEating) {
+			PlayerCheck ();
+			if (isGrowling) {
+				Growl ();
+			}
+				else 
+				{
+					enemydoganim.SetBool ("isWait", false);
+					growl.mute = true;
+				}
+		}
+			
 
 		if (!isGrowling || isFleeing) 
 		{
@@ -75,7 +90,7 @@ public class EnemyDog : MonoBehaviour {
 
 		walkAmount.y = walkingDirection * walkSpeed * Time.deltaTime * _flight;
 
-		walkSpeed = 7f;
+		walkSpeed = 10f;
 		wallLeft = 500.0f;
 		wallRight = 500.0f;
 
@@ -92,7 +107,7 @@ public class EnemyDog : MonoBehaviour {
 
 	void PlayerCheck()
 	{
-		AudioSource growl = this.GetComponent<AudioSource> ();
+
 
 		Vector2 playerPos;
 		playerPos.x = player.transform.position.x;
@@ -102,16 +117,10 @@ public class EnemyDog : MonoBehaviour {
 		{
 			isGrowling = true;
 
-			if (!growl.isPlaying) 
-			{
-				growl.mute = false;
-				growl.Play ();
-				enemydoganim.SetBool ("isWait", true);
-				this.GetComponent<Rigidbody> ().isKinematic = true;
-			}
 
 			if (player.GetComponentInChildren<Bark> ()._bark) 
 			{
+				isGrowling = false;
 				enemydoganim.SetBool ("isWait", false);
 				growl.mute = true;
 				this.GetComponent<Rigidbody> ().isKinematic = false;
@@ -126,6 +135,7 @@ public class EnemyDog : MonoBehaviour {
 			enemydoganim.SetBool ("isWait", false);
 			isGrowling = false;
 			growl.mute = true;
+			this.GetComponent<Rigidbody> ().isKinematic = false;
 		}
 
 
@@ -143,8 +153,14 @@ public class EnemyDog : MonoBehaviour {
 
 			if (lineofsight.OverlapPoint (itemPos)) 
 			{
-				Debug.Log ("Other dog sees object");
+				Debug.Log ("Other dog sees object "+item.name);
 				GameObject itemID = item.gameObject;
+				bool edible = itemID.GetComponent<ObjectClass> ()._edible;
+				if (edible = true) 
+				{
+					isEating = true;
+					Eat (itemID);
+				}
 			}
 		}
 
@@ -152,21 +168,44 @@ public class EnemyDog : MonoBehaviour {
 
 	}
 
-
-	/*void OnTriggerStay2D(Collider2D other)
+	void Eat (GameObject item)
 	{
-		Debug.Log ("Collider triggered");
 
-		if (other.tag == "item") 
+		if (item.transform.position.x > this.transform.position.x) 
 		{
-			GameObject Item = other.transform.parent.gameObject;
-			bool edible = Item.GetComponent<ObjectClass>()._edible;
-			if (edible = true) 
-				
-			{
-				Debug.Log ("Autre chien a repéré nourriture !");
-			}
+			walkingDirection = 1;
+			enemydogsr.flipX = false;
+			wallRight = item.transform.position.x+1f;
 		}
-	} */
+
+		if (item.transform.position.x < this.transform.position.x) 
+		{
+			walkingDirection = -1;
+			enemydogsr.flipX = true;
+			wallLeft = item.transform.position.x-1f;
+		}
+
+		if (Mathf.RoundToInt(item.transform.position.x) == Mathf.RoundToInt(this.transform.position.x)) 
+		{
+			Debug.Log ("Ate that");
+			Destroy (item);
+			isEating = false;
+			Flee ();
+		}
+	}
+
+	void Growl()
+	{
+		growl.mute = false;
+		enemydoganim.SetBool ("isWait", true);
+		this.GetComponent<Rigidbody> ().isKinematic = true;
+		if (!growl.isPlaying) 
+		{
+
+			growl.Play ();
+
+		}
+	}
+		
 
 }

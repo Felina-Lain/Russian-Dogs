@@ -8,6 +8,7 @@ public class ObjectClass: MonoBehaviour {
 
 	public bool _edible;
 	public bool _pickable;
+	public bool _carried;
 
 	public int _health;
 

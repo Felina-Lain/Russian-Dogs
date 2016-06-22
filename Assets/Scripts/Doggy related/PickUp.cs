@@ -40,6 +40,8 @@ public class PickUp : MonoBehaviour {
 				_pick.transform.parent = this.transform;
 				_pick.GetComponent<MeshRenderer> ().enabled = false;
 				_baballe = true;
+			//_pick.GetComponent<ObjectClass> ()._pickable && _holding;
+
 
 			//eating stuff
 				if (Input.GetKey (KeyCode.E) && _pick.GetComponent<ObjectClass> ()._edible) {
