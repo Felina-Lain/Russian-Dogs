@@ -2,19 +2,22 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NPC\Pigeon.cs">
     <Files>
-      <File FileName="Assets\Scripts\NPC\Pigeon.cs" Line="70" Column="12" />
-      <File FileName="Assets\Scripts\Doggy related\AvatarMove.cs" Line="21" Column="3" />
-      <File FileName="Assets\Scripts\game base\Camera.cs" Line="39" Column="20" />
+      <File FileName="Assets\Scripts\game base\Camera.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Doggy related\AvatarAnimations.cs" Line="41" Column="3" />
-      <File FileName="Assets\Scripts\Doggy related\PickUp.cs" Line="24" Column="40" />
-      <File FileName="Assets\Scripts\game base\Manager.cs" Line="17" Column="39" />
-      <File FileName="Assets\Scripts\Doggy related\Bark.cs" Line="28" Column="1" />
-      <File FileName="Assets\Scripts\Doggy related\ScentInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Doggy related\ScentDetect.cs" Line="32" Column="1" />
+      <File FileName="Assets\Scripts\Doggy related\PickUp.cs" Line="13" Column="37" />
+      <File FileName="Assets\Scripts\game base\Manager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NPC\EnemyDog.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NPC\Pigeon.cs" Line="86" Column="1" />
+      <File FileName="Assets\Scripts\Doggy related\Bark.cs" Line="22" Column="22" />
+      <File FileName="Assets\Scripts\game base\ObjectClass.cs" Line="16" Column="32" />
+      <File FileName="Assets\Scripts\Doggy related\AvatarMove.cs" Line="57" Column="8" />
+      <File FileName="Assets\Scripts\game base\Killzone.cs" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\Projets divers\Projets jeu\Russian Dog\Assets\Scripts\NPC\EnemyDog.cs" line="128" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
