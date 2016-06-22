@@ -197,6 +197,14 @@ public class EnemyDog : MonoBehaviour {
 
 	void Growl()
 	{
+		if (player.transform.position.x > this.transform.position.x) {
+			walkingDirection = 1;
+			enemydogsr.flipX = false;
+		} else if(player.transform.position.x < this.transform.position.x)
+		{
+			walkingDirection = -1;
+			enemydogsr.flipX = true;
+		}
 		growl.mute = false;
 		enemydoganim.SetBool ("isWait", true);
 		this.GetComponent<Rigidbody> ().isKinematic = true;
