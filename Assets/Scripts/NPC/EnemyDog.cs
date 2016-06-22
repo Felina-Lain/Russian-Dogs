@@ -170,7 +170,7 @@ public class EnemyDog : MonoBehaviour {
 
 	void Eat (GameObject item)
 	{
-
+		this.GetComponent<Rigidbody> ().isKinematic = true;
 		if (item.transform.position.x > this.transform.position.x) 
 		{
 			walkingDirection = 1;

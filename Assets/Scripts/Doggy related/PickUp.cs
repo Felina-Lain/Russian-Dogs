@@ -16,6 +16,16 @@ public class PickUp : MonoBehaviour {
 			_pick = other.gameObject;
 		}
 
+		if (other.tag == "Enemy" && _baballe) 
+		{
+			Debug.Log ("I WILL TAKE YOUR FOOD");
+			_pick.GetComponent<ObjectClass> ()._carried = false;
+			//_pick.transform.parent = null;
+			_pick.GetComponent<MeshRenderer> ().enabled = true;
+			_pick = null;
+			_baballe = false;
+		}
+
 
 	}
 
@@ -43,7 +53,23 @@ public class PickUp : MonoBehaviour {
 			_pick.GetComponent<ObjectClass> ()._carried = true;
 
 			if (_pick.GetComponent<ObjectClass> ()._carried == true) {
+
 				_pick.transform.position = GameObject.FindWithTag ("Player").transform.position;
+
+			/*	if (Manager.player_direction == "Left") {
+
+					Vector3 newPos = (GameObject.FindWithTag ("CarryPointLeft").transform.localPosition) + (GameObject.FindWithTag ("Player").transform.localPosition);
+					
+					_pick.transform.position = newPos ;
+				} 
+
+				if (Manager.player_direction == "Right")
+					
+				{
+					Vector3 newPos = (GameObject.FindWithTag ("CarryPointRight").transform.localPosition) + (GameObject.FindWithTag ("Player").transform.localPosition);
+					_pick.transform.position = newPos;
+				} */
+
 			}
 
 

@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\NPC\EnemyDog.cs" />
      <Compile Include="Assets\Scripts\NPC\Pigeon.cs" />
      <Compile Include="Assets\Scripts\game base\Camera.cs" />
+     <Compile Include="Assets\Scripts\game base\Killzone.cs" />
      <Compile Include="Assets\Scripts\game base\Manager.cs" />
      <Compile Include="Assets\Scripts\game base\ObjectClass.cs" />
  <Reference Include="UnityEngine.UI">
