@@ -21,9 +21,13 @@ public class PickUp : MonoBehaviour {
 
 		void  Update () {
 
+		Manager.player_iscarrying = _holding;
+		
+
 		if (Input.GetKeyDown (KeyCode.R)) {
 
 			_holding = !_holding;
+
 
 		}
 

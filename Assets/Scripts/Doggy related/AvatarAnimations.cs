@@ -47,6 +47,8 @@ public class AvatarAnimations : MonoBehaviour
 		{
 			playeranim.SetBool ("isJumping", false);
 		}
+
+		playeranim.SetBool ("isCarrying", Manager.player_iscarrying);
 	
 	}
 }

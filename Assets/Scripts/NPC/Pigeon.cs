@@ -49,17 +49,40 @@ public class Pigeon : MonoBehaviour {
 		if (other.tag == "Player") {
 			if (other.GetComponentInChildren<Bark> ()._bark) {
 
-				GetComponent<Rigidbody> ().useGravity = _groundAnimal;
-
-				walkAmount.y = walkingDirection * walkSpeed * Time.deltaTime * _flight;
-		
-				walkSpeed = 7f;
-				wallLeft = 500.0f;
-				wallRight = 500.0f;
-				walkingDirection = Random.Range (-1f, 1f);
+				Flee ();
 
 			}
 	
 		}
+	}
+
+	void CheckPlayerProximity()
+	{
+		Collider2D flightcollider = this.GetComponentInChildren<Collider2D> ();
+
+		GameObject player = GameObject.FindWithTag ("Player");
+		Vector2 playerPos;
+		playerPos.x = player.transform.position.x;
+		playerPos.y = player.transform.position.y;
+
+		if (flightcollider.OverlapPoint (playerPos)) 
+		{
+			Flee ();
+		}
+	}
+
+	void Flee()
+	{
+		GetComponent<Rigidbody> ().useGravity = _groundAnimal;
+
+		walkAmount.y = walkingDirection * walkSpeed * Time.deltaTime * _flight;
+
+		walkSpeed = 15f;
+		wallLeft = 500.0f;
+		wallRight = 500.0f;
+		walkingDirection = Random.Range (0f, 1f);
+
+		Animator pigeonanim = this.GetComponentInChildren<Animator> ();
+		pigeonanim.SetBool ("isFlying", true);
 	}
 }

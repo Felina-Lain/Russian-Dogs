@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour {
 	//reads the direction the player is facing and moving towards. Either "left" or "right".
 	public static string player_direction;
 	public static int player_platformlevel;
+	public static bool player_iscarrying;
 
 	public GameObject player;
 

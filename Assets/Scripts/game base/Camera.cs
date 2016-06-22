@@ -36,7 +36,7 @@ public class Camera : MonoBehaviour {
 		{
 		case 1:
 			{
-				float yGoal = player.transform.position.y + 3;
+				float yGoal = 0;
 				camPos.y = Mathf.Lerp (camera.transform.position.y, yGoal, 0.03f);
 			}
 			break;
