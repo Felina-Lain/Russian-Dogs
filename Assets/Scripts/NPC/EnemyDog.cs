@@ -53,7 +53,7 @@ public class EnemyDog : MonoBehaviour {
 		
 		FoodCheck ();
 
-		if (!isEating) {
+		if (!isEating && !isFleeing) {
 			PlayerCheck ();
 			if (isGrowling) {
 				Growl ();
@@ -66,7 +66,7 @@ public class EnemyDog : MonoBehaviour {
 		}
 			
 
-		if (!isGrowling || isFleeing) 
+		if (!isGrowling) 
 		{
 			walkAmount.x = walkingDirection * walkSpeed * Time.deltaTime;
 			if (walkingDirection > 0.0f && transform.position.x >= wallRight) {
@@ -77,6 +77,12 @@ public class EnemyDog : MonoBehaviour {
 				enemydogsr.flipX = false;
 			}
 			transform.Translate (walkAmount);
+		}
+
+		if (isFleeing) 
+		{
+			Flee ();
+
 		}
 
 
@@ -99,6 +105,7 @@ public class EnemyDog : MonoBehaviour {
 			enemydogsr.flipX = false;
 		} else 
 		{
+			Debug.Log ("Fuite vers la gauche");
 			walkingDirection = -1;
 			enemydogsr.flipX = true;
 		}

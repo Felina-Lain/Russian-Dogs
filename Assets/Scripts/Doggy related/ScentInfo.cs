@@ -30,7 +30,7 @@ public class ScentInfo : MonoBehaviour {
 	
 		if (other.tag == "Player") {
 		
-			_icon.GetComponent<Image> ().enabled = false;
+//			_icon.GetComponent<Image> ().enabled = false;
 		
 		}
 	

@@ -1,22 +1,23 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NPC\EnemyDog.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Doggy related\PickUp.cs">
     <Files>
-      <File FileName="Assets\Scripts\NPC\Pigeon.cs" Line="90" Column="3" />
+      <File FileName="Assets\Scripts\NPC\EnemyDog.cs" Line="69" Column="18" />
+      <File FileName="Assets\Scripts\game base\Killzone.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NPC\Pigeon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\game base\Camera.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Doggy related\AvatarAnimations.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Doggy related\PickUp.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Doggy related\PickUp.cs" Line="24" Column="55" />
       <File FileName="Assets\Scripts\game base\Manager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NPC\EnemyDog.cs" Line="208" Column="22" />
       <File FileName="Assets\Scripts\Doggy related\Bark.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\game base\ObjectClass.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Doggy related\AvatarMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\game base\Killzone.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Doggy related\ScentInfo.cs" Line="33" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="D:\Projets divers\Projets jeu\Russian Dog\Assets\Scripts\NPC\EnemyDog.cs" line="128" column="1" />
+      <Breakpoint file="D:\Projets divers\Projets jeu\Russian Dog\Assets\Scripts\NPC\EnemyDog.cs" line="135" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
