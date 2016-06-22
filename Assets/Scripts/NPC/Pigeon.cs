@@ -65,6 +65,8 @@ public class Pigeon : MonoBehaviour {
 	{
 
 		GameObject player = GameObject.FindWithTag ("Player");
+		if (player == null)	return;
+
 		Vector2 playerPos;
 		playerPos.x = player.transform.position.x;
 		playerPos.y = player.transform.position.y;

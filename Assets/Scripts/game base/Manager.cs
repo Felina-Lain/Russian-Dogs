@@ -44,6 +44,7 @@ public class Manager : MonoBehaviour {
 		}
 
 		//reading the platform level on which the player is
+		if (player == null)	return;
 
 		if (player.transform.position.y < 0) 
 		{

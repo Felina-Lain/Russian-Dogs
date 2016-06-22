@@ -108,6 +108,7 @@ public class EnemyDog : MonoBehaviour {
 	void PlayerCheck()
 	{
 
+		if (player == null)	return;
 
 		Vector2 playerPos;
 		playerPos.x = player.transform.position.x;
