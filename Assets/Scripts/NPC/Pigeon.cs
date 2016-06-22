@@ -16,10 +16,13 @@ public class Pigeon : MonoBehaviour {
 	public float _flight;
 	public bool _groundAnimal;
 
+	public Collider2D flightcollider;
+
 	Vector3 walkAmount;
 
 	void Start(){
-	
+		flightcollider = this.GetComponentInChildren<Collider2D> ();
+
 		//walkSpeed = startwalkSpeed;
 		//wallLeft = startwallLeft;
 		//wallRight = startwallRight;
@@ -41,6 +44,8 @@ public class Pigeon : MonoBehaviour {
 			walkingDirection = 1.0f;
 		transform.Translate(walkAmount);
 
+		CheckPlayerProximity ();
+
 	}
 
 	void OnTriggerStay (Collider other)
@@ -58,7 +63,6 @@ public class Pigeon : MonoBehaviour {
 
 	void CheckPlayerProximity()
 	{
-		Collider2D flightcollider = this.GetComponentInChildren<Collider2D> ();
 
 		GameObject player = GameObject.FindWithTag ("Player");
 		Vector2 playerPos;
@@ -67,12 +71,21 @@ public class Pigeon : MonoBehaviour {
 
 		if (flightcollider.OverlapPoint (playerPos)) 
 		{
+			Debug.Log ("You should flee, stupid pigeon");
 			Flee ();
 		}
+
 	}
 
 	void Flee()
 	{
+		AudioClip flight = Resources.Load ("pigeon_fly") as AudioClip;
+		AudioSource audioflight = this.GetComponent<AudioSource> ();
+		audioflight.clip = flight;
+		audioflight.volume = 1f;
+		audioflight.loop = false;
+		audioflight.Play ();
+
 		GetComponent<Rigidbody> ().useGravity = _groundAnimal;
 
 		walkAmount.y = walkingDirection * walkSpeed * Time.deltaTime * _flight;

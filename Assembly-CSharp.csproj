@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Doggy related\PickUp.cs" />
      <Compile Include="Assets\Scripts\Doggy related\ScentDetect.cs" />
      <Compile Include="Assets\Scripts\Doggy related\ScentInfo.cs" />
+     <Compile Include="Assets\Scripts\NPC\EnemyDog.cs" />
      <Compile Include="Assets\Scripts\NPC\Pigeon.cs" />
      <Compile Include="Assets\Scripts\game base\Camera.cs" />
      <Compile Include="Assets\Scripts\game base\Manager.cs" />

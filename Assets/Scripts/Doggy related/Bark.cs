@@ -13,10 +13,13 @@ public class Bark : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.E) && !GetComponent<PickUp> ()._holding) {
+		if (Input.GetKeyDown (KeyCode.E) && !GetComponent<PickUp> ()._baballe) {
 		
 			print ("WROUF! WROUF!");
-			this.GetComponent<AudioSource> ().Play ();
+			AudioClip bark = Resources.Load ("barking") as AudioClip;
+			AudioSource audiobark = this.GetComponent<AudioSource> ();
+			audiobark.clip = bark;
+			audiobark.Play ();
 			_bark = true;
 		
 		} else { 
