@@ -88,6 +88,7 @@ public class Pigeon : MonoBehaviour {
 		audioflight.loop = false;
 		audioflight.Play ();
 
+
 		GetComponent<Rigidbody> ().useGravity = _groundAnimal;
 
 		walkAmount.y = walkingDirection * walkSpeed * Time.deltaTime * _flight;
