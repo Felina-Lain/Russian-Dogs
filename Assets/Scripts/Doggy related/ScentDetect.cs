@@ -30,6 +30,8 @@ public class ScentDetect : MonoBehaviour {
 	{
 		//detecting overlap between object smell collider and player smell collider
 		GameObject player = GameObject.FindWithTag ("Player");
+		if (player == null)	return;
+
 		Vector2 playerPos;
 		playerPos.x = player.transform.position.x;
 		playerPos.y = player.transform.position.y;

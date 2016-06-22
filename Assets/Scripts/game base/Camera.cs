@@ -14,6 +14,7 @@ public class Camera : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (player == null)	return;
 
 		var camPos = player.transform.position;
 		camPos.z = -10;
