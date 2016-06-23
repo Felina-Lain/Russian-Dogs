@@ -92,6 +92,7 @@ public class PickUp : MonoBehaviour {
 		} else if(!_holding){
 			_pick.GetComponent<ObjectClass> ()._carried = false;
 				//_pick.transform.parent = null;
+			if(_pick.GetComponentInChildren<MeshRenderer> () == null) return;
 				_pick.GetComponentInChildren<MeshRenderer> ().enabled = true;
 				_pick = null;
 				_baballe = false;

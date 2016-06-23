@@ -33,6 +33,7 @@ public class SpawnNpc : MonoBehaviour {
 
 			GameObject newNPC = (GameObject)Instantiate (_npc, new Vector3 (Random.Range (minX, maxX), Random.Range (minY, maxY), 0), Quaternion.identity);
 			NPCS.Add (newNPC);
+			newNPC.transform.parent = GameObject.Find ("NPCs").transform;
 
 			if (newNPC.name.Contains ("Pigeon")) {
 

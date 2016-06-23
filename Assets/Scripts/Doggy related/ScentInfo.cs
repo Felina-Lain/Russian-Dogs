@@ -16,8 +16,8 @@ public class ScentInfo : MonoBehaviour {
 
 
 				if (this.name == Manager.s_scentL [i]) {
-					_icon.GetComponent<Image> ().enabled = true;
-					_icon.GetComponent<Image> ().overrideSprite = Manager.s_iconsL[i] as Sprite;
+					_icon.GetComponentInChildren<Image> ().enabled = true;
+					_icon.GetComponentInChildren<Image> ().overrideSprite = Manager.s_iconsL[i] as Sprite;
 				}
 
 			}
@@ -30,7 +30,7 @@ public class ScentInfo : MonoBehaviour {
 	
 		if (other.tag == "Player") {
 		
-			_icon.GetComponent<Image> ().enabled = false;
+			_icon.GetComponentInChildren<Image> ().enabled = false;
 		
 		}
 	
