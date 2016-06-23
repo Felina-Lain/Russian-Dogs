@@ -24,13 +24,13 @@ public class Camera : MonoBehaviour {
 		if (Manager.player_direction == "left") 
 		{
 			float xGoal = player.transform.position.x -4 ;
-			camPos.x = Mathf.Lerp (camera.transform.position.x, xGoal, 0.05f);
+			camPos.x = Mathf.Lerp (camera.transform.position.x, xGoal, 0.04f);
 		} 
 		else 
 			// horizontal : camera flip to the right
 		{
 			float xGoal = player.transform.position.x +4 ;
-			camPos.x = Mathf.Lerp (camera.transform.position.x, xGoal, 0.05f);
+			camPos.x = Mathf.Lerp (camera.transform.position.x, xGoal, 0.04f);
 		}
 
 		switch (Manager.player_platformlevel) 
