@@ -47,10 +47,11 @@ public class PickUp : MonoBehaviour {
 				//_pick.transform.parent = this.transform;
 				_pick.GetComponentInChildren<MeshRenderer> ().enabled = false;
 				_baballe = true;
+			// Manager.player_ispickup = true;
 			_pick.GetComponent<ObjectClass> ()._carried = true;
 
 			if (_pick.GetComponent<ObjectClass> ()._carried == true) {
-				_pick.transform.position = GameObject.FindWithTag ("Player").transform.position;
+				_pick.transform.position = new Vector3 (GameObject.FindWithTag ("Player").transform.position.x + 2.25f,GameObject.FindWithTag ("Player").transform.position.y, 0);
 
 
 			}
