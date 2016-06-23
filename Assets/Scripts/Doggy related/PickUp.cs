@@ -21,7 +21,7 @@ public class PickUp : MonoBehaviour {
 			Debug.Log ("I WILL TAKE YOUR FOOD");
 			_pick.GetComponent<ObjectClass> ()._carried = false;
 			//_pick.transform.parent = null;
-			_pick.GetComponent<MeshRenderer> ().enabled = true;
+			_pick.GetComponentInChildren<MeshRenderer> ().enabled = true;
 			_pick = null;
 			_baballe = false;
 		}
@@ -48,7 +48,7 @@ public class PickUp : MonoBehaviour {
 			if (_pick.GetComponent<ObjectClass> ()._pickable && _holding) {
 
 				//_pick.transform.parent = this.transform;
-				_pick.GetComponent<MeshRenderer> ().enabled = false;
+				_pick.GetComponentInChildren<MeshRenderer> ().enabled = false;
 				_baballe = true;
 			_pick.GetComponent<ObjectClass> ()._carried = true;
 
@@ -92,7 +92,7 @@ public class PickUp : MonoBehaviour {
 		} else if(!_holding){
 			_pick.GetComponent<ObjectClass> ()._carried = false;
 				//_pick.transform.parent = null;
-				_pick.GetComponent<MeshRenderer> ().enabled = true;
+				_pick.GetComponentInChildren<MeshRenderer> ().enabled = true;
 				_pick = null;
 				_baballe = false;
 
