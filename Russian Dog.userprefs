@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\game base\SceneTransitions.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\game base\Manager.cs">
     <Files>
-      <File FileName="Assets\Scripts\game base\SceneTransitions.cs" Line="18" Column="30" />
+      <File FileName="Assets\Scripts\game base\Manager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\game base\SceneTransitions.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\game base\Killzone.cs" Line="1" Column="1" />
       <File FileName="I:\Isart\Projets\Unity\Puzzle game\Game\Production\Builds\Ninjamerica\Assets\Scripts\Launch.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Doggy related\ScentInfo.cs" Line="1" Column="1" />
