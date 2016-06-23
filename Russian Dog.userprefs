@@ -1,20 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NPC\Pigeon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\game base\SceneTransitions.cs">
     <Files>
-      <File FileName="Assets\Scripts\Doggy related\ScentDetect.cs" Line="54" Column="23" />
-      <File FileName="Assets\Scripts\Doggy related\PickUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Doggy related\ScentInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NPC\SpawnNpc.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NPC\EnemyDog.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\game base\SceneTransitions.cs" Line="18" Column="30" />
       <File FileName="Assets\Scripts\game base\Killzone.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NPC\Pigeon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\game base\Camera.cs" Line="27" Column="67" />
-      <File FileName="Assets\Scripts\Doggy related\AvatarAnimations.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\game base\Manager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Doggy related\Bark.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\game base\ObjectClass.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Doggy related\AvatarMove.cs" Line="1" Column="1" />
+      <File FileName="I:\Isart\Projets\Unity\Puzzle game\Game\Production\Builds\Ninjamerica\Assets\Scripts\Launch.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Doggy related\ScentInfo.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

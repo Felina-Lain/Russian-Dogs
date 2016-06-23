@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\game base\Manager.cs" />
      <Compile Include="Assets\Scripts\game base\ObjectClass.cs" />
      <Compile Include="Assets\Scripts\game base\Restart.cs" />
+     <Compile Include="Assets\Scripts\game base\SceneTransitions.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
