@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class ScentDetect : MonoBehaviour {
 
-	public Collider2D selfcollider;
+	private Collider2D selfcollider;
 
-	public bool isSmelling;
+	private bool isSmelling;
 
 	public GameObject trail;
 	public GameObject trailContainer;
@@ -18,7 +18,7 @@ public class ScentDetect : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		selfcollider = this.GetComponentInChildren<Collider2D>();
+		this.selfcollider = this.GetComponentInChildren<Collider2D>();
 		trail = Resources.Load<GameObject> ("ScentTrail");
 		trailContainer = GameObject.Find ("ScentTrailContainer");
 			
@@ -40,9 +40,10 @@ public class ScentDetect : MonoBehaviour {
 		selfPos.x = this.transform.position.x;
 		selfPos.y = this.transform.position.y;
 
-		if (selfcollider.OverlapPoint (playerPos)) {
+		if (this.selfcollider.OverlapPoint (playerPos)) {
 			isSmelling = true;
-		} else {
+		} else if (!this.selfcollider.OverlapPoint (playerPos))
+		{
 			isSmelling = false;
 		}
 
@@ -50,15 +51,16 @@ public class ScentDetect : MonoBehaviour {
 		if (isSmelling) {
 			trailTimer = trailTimer + Time.deltaTime;
 
-			if (trailTimer >= 0.3f) {
+			if (trailTimer >= 1f) {
 				trailTimer = 0;
 				GameObject t = Instantiate (trail);
 				Vector3 midPoint;
-				midPoint.x = Mathf.Lerp (selfPos.x, playerPos.x, 0.5f);
-				midPoint.y = Mathf.Lerp (selfPos.y, playerPos.y, 0.5f);
+				midPoint.x = Mathf.Lerp (selfPos.x, playerPos.x, 0.75f);
+				midPoint.y = Mathf.Lerp (selfPos.y, playerPos.y, 0.75f);
 				midPoint.z = 0;
 
 				t.name = ("Trail" + this.name);
+				Debug.Log ("New trail " + t.name);
 				t.transform.position = midPoint;
 				t.transform.parent = trailContainer.transform;
 
@@ -81,6 +83,7 @@ public class ScentDetect : MonoBehaviour {
 
 		if (!isSmelling) {
 			Destroy (GameObject.Find ("Trail" + this.name));
+			Debug.Log ("Trail destroyed");
 
 		}
 
