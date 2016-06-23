@@ -7,12 +7,11 @@ public class PickUp : MonoBehaviour {
 	public bool _baballe;
 	public GameObject _pick;
 
-
 	
 	// Update is called once per frame
 	void OnTriggerStay (Collider other) {
 
-		if (other.tag == "item" && !_holding) {
+		if (other.tag == "item" && _pick == null) {
 			_pick = other.gameObject;
 		}
 
@@ -38,13 +37,11 @@ public class PickUp : MonoBehaviour {
 
 			_holding = !_holding;
 
-
-		}
+					}
 
 		if (_pick == null) {
 			return;
 		}
-
 			if (_pick.GetComponent<ObjectClass> ()._pickable && _holding) {
 
 				//_pick.transform.parent = this.transform;
@@ -53,22 +50,14 @@ public class PickUp : MonoBehaviour {
 			_pick.GetComponent<ObjectClass> ()._carried = true;
 
 			if (_pick.GetComponent<ObjectClass> ()._carried == true) {
-
 				_pick.transform.position = GameObject.FindWithTag ("Player").transform.position;
 
-			/*	if (Manager.player_direction == "Left") {
 
-					Vector3 newPos = (GameObject.FindWithTag ("CarryPointLeft").transform.localPosition) + (GameObject.FindWithTag ("Player").transform.localPosition);
-					
-					_pick.transform.position = newPos ;
-				} 
+			}
 
-				if (Manager.player_direction == "Right")
-					
-				{
-					Vector3 newPos = (GameObject.FindWithTag ("CarryPointRight").transform.localPosition) + (GameObject.FindWithTag ("Player").transform.localPosition);
-					_pick.transform.position = newPos;
-				} */
+			if (_pick.name == "Baballe") {
+
+				_pick.GetComponent<SphereCollider> ().enabled = false;
 
 			}
 
@@ -94,8 +83,17 @@ public class PickUp : MonoBehaviour {
 				//_pick.transform.parent = null;
 			if(_pick.GetComponentInChildren<MeshRenderer> () == null) return;
 				_pick.GetComponentInChildren<MeshRenderer> ().enabled = true;
+
+			if (_pick.name == "Baballe") {
+
+				_pick.GetComponent<SphereCollider> ().enabled = true;
+
+
+			}
 				_pick = null;
 				_baballe = false;
+
+
 
 			}
 
