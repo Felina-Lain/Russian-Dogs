@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PickUp : MonoBehaviour {
 
@@ -72,6 +74,7 @@ public class PickUp : MonoBehaviour {
 					AudioSource audioeat = this.GetComponent<AudioSource> ();
 					audioeat.clip = eat;
 					audioeat.Play ();
+					_pick.GetComponent<ScentInfo>()._icon.GetComponentInChildren<Image> ().enabled = false;
 					Destroy (_pick);
 					_pick = null;
 					_holding = false;
